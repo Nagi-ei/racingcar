@@ -22,3 +22,11 @@ import MESSAGES from './Constant.js';
 // }
 
 // console.log(carClassArray);
+
+const point = 3;
+let progress = '';
+for (let i = 0; i < point; i++) {
+  progress += '-';
+}
+
+console.log(progress);
