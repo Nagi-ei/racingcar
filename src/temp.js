@@ -23,10 +23,46 @@ import MESSAGES from './Constant.js';
 
 // console.log(carClassArray);
 
-const point = 3;
-let progress = '';
-for (let i = 0; i < point; i++) {
-  progress += '-';
+const a = new Car('aaa');
+a.move();
+a.move();
+a.move();
+a.move();
+a.move();
+const b = new Car('bbb');
+b.move();
+b.move();
+b.move();
+const c = new Car('ccc');
+c.move();
+c.move();
+
+console.log(a.point);
+console.log(b.point);
+console.log(c.point);
+
+const testArray = [a, b, c];
+
+function findWinner() {
+  const winnersObj = [];
+  // 맥스 포인트 객체 하나
+  const winner = testArray.reduce((previous, current) => {
+    return previous.point > current.point ? previous : current;
+  });
+  // 맥스 포인트에 해당하는 객체 이름 배열에 넣기
+  testArray.forEach((player) => {
+    if (winner.point == player.point) {
+      winnersObj.push(player);
+    }
+  });
+  // 그 이름을 스트링으로 엮어서 리턴
+  let winners = '';
+  winnersObj.forEach((winner) => {
+    winners += winner.name;
+    winners += ', ';
+  });
+  winners = winners.slice(0, -2);
+  return winners;
 }
 
-console.log(progress);
+console.log(findWinner());

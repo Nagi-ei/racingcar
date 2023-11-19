@@ -1,6 +1,8 @@
 // import { MissionUtils } from "@woowacourse/mission-utils";
 import { Random } from '@woowacourse/mission-utils';
 
+const cars = [];
+
 class Car {
   constructor(name) {
     this.name = name;
@@ -15,4 +17,4 @@ class Car {
   }
 }
 
-export default Car;
+export { cars, Car };
