@@ -25,7 +25,7 @@ class App {
   static makeClassArray(input) {
     const carArray = input.split(',');
     if (carArray.some((car) => car.length > 5)) {
-      throw new Error(MESSAGES.ERROR_NAME);
+      throw new Error(`${MESSAGES.ERROR} ${MESSAGES.ERROR_NAME}`);
     } else {
       // 각각 클래스 생성하고, 배열에 담기
       carArray.forEach((car) => {
@@ -37,7 +37,7 @@ class App {
 
   static makeNumber(input) {
     if (!MESSAGES.NATURAL_NUMBER.test(input)) {
-      throw new Error(MESSAGES.ERROR_NUMBER);
+      throw new Error(`${MESSAGES.ERROR} ${MESSAGES.ERROR_NUMBER}`);
     } else {
       return Number(input);
     }
